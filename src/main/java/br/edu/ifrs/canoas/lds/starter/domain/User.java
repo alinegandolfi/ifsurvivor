@@ -43,6 +43,9 @@ public class User {
 	
 	@Column(columnDefinition = "TEXT")
 	private String description;
+	
+	@OneToMany
+	private List<Orders> orders;
 
 	public String getDescription() {
 		return description;
@@ -120,5 +123,14 @@ public class User {
 		return "User [id=" + id + ", email=" + email + ", password=" + password + "]";
 	}
 
+	public List<Orders> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<Orders> orders) {
+		this.orders = orders;
+	}
+
+	
 
 }

@@ -23,7 +23,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#first"><i class="ion-ios-analytics-outline"></i> Landing Zero</a>
+                <a class="navbar-brand page-scroll" href="#first" th:text="#{woking.title}" ><i class="ion-ios-analytics-outline"></i> </a>
             </div>
             <div class="navbar-collapse collapse" id="bs-navbar">
                 <ul class="nav navbar-nav">
@@ -34,18 +34,18 @@
                         <a class="page-scroll" href="#two">Highlights</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#three">Gallery</a>
+                        <a class="page-scroll" href="#three" th:text="#{menu.galeria}"></a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#four">Features</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#last">Contact</a>
+                        <a class="page-scroll" href="#last" th:text="#{menu.faleconosco}"></a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="@{/login}">Login</a>
+                        <a class="page-scroll" th:href="@{/login}" th:text="#{navigation.login}"></a>
                     </li>
                 </ul>
             </div>
@@ -54,8 +54,8 @@
     <header id="first">
         <div class="header-content">
             <div class="inner">
-                <h1 class="cursive">Woking Thai in Box</h1>
-                <h4>Tipo um iFoodzinho</h4>
+                <h1 class="cursive" th:text="#{woking.title}"></h1>
+                <h4 th:text="#{woking.description}"></h4>
                 <hr/>
                 <a href="#video-background" id="toggleVideo" data-toggle="collapse" class="btn btn-primary btn-xl">Toggle Video</a> &nbsp; <a href="#one" class="btn btn-primary btn-xl page-scroll">Get Started</a>
             </div>
@@ -282,9 +282,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="margin-top-0 wow fadeIn">Get in Touch</h2>
+                    <h2 class="margin-top-0 wow fadeIn" th:text="#{menu.faleconosco}"></h2>
                     <hr class="primary"/>
-                    <p>We love feedback. Fill out the form below and we'll get back to you as soon as possible.</p>
+                    <p ></p>
                 </div>
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <form class="contact-form row">
@@ -317,12 +317,9 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-6 col-sm-3 column">
-                    <h4>Information</h4>
+                    <h4 th:text="#{menu.local}"></h4>
                     <ul class="list-unstyled">
-                        <li><a href="">Products</a></li>
-                        <li><a href="">Services</a></li>
-                        <li><a href="">Benefits</a></li>
-                        <li><a href="">Developers</a></li>
+                        <li><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.289061007348!2d-51.18313448468768!3d-30.028563937498994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9519782a3c6902ab%3A0xb2ef0d08dd929cc3!2sAv.+Carlos+Gomes%2C+778+-+Auxiliadora%2C+Porto+Alegre+-+RS%2C+90480-001!5e0!3m2!1spt-BR!2sbr!4v1467295761575" width="300" height="150" frameborder="0" style="border:0" allowfullscreen="true"></iframe></li>
                     </ul>
                 </div>
                 <div class="col-xs-6 col-sm-3 column">
