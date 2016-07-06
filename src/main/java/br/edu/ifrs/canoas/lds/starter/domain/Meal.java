@@ -22,9 +22,8 @@ public class Meal {
 	
 	@Column(nullable = false)
 	private double price;
-	
-	
 
+	
 	public Long getId() {
 		return id;
 	}
