@@ -37,7 +37,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.authorizeRequests()
 			.antMatchers("/test").permitAll()
 			.antMatchers("/").permitAll()
-			.antMatchers("/admin/**").hasRole("ADMIN").anyRequest().authenticated()
 			.and().formLogin()
 				.loginPage("/login").permitAll().and().logout().deleteCookies("remember-me")
 				.logoutSuccessUrl("/login?logout").permitAll().and().rememberMe();
