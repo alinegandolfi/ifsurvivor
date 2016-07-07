@@ -1,13 +1,12 @@
 package br.edu.ifrs.canoas.lds.starter.domain;
 
 import java.util.Date;
-import java.util.List;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Future;
 
@@ -27,8 +26,10 @@ public class Orders {
 	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	private Date date;
 	
-	@OneToMany
-	private List<Meal> meals;
+	@ManyToOne
+	private Meal meal;
+	
+	private int quantity;
 	
 	@ManyToOne
 	private User client;
@@ -57,21 +58,33 @@ public class Orders {
 		this.date = date;
 	}
 
-	public List<Meal> getMeals() {
-		return meals;
+
+	public Meal getMeal() {
+		return meal;
 	}
 
-	public void setMeals(List<Meal> meals) {
-		this.meals = meals;
+	public void setMeal(Meal meal) {
+		this.meal = meal;
 	}
 
 	public User getClient() {
 		return client;
 	}
 
+
 	public void setClient(User client) {
 		this.client = client;
 	}
+
+	public double getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	
+	
 	
 
 }

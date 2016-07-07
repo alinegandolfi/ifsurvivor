@@ -28,9 +28,6 @@
             <div class="navbar-collapse collapse" id="bs-navbar">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a class="page-scroll" href="#one">Intro</a>
-                    </li>
-                    <li>
                         <a class="page-scroll" href="#two" th:text="#{menu.options}"></a>
                     </li>
                     <li>
@@ -38,9 +35,6 @@
                     </li>
                     <li>
                         <a class="page-scroll" href="#four" th:text="#{menu.meals}"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#last" th:text="#{menu.faleconosco}"></a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -64,20 +58,6 @@
             <source src="https://s3-us-west-2.amazonaws.com/coverr/mp4/Traffic-blurred2.mp4" type="video/mp4"/>Your browser does not support the video tag. I suggest you upgrade your browser.
         </video>
     </header>
-    <section class="bg-primary" id="one">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 text-center">
-                    <h2 class="margin-top-0 text-primary">Built On The Bootstrap Grid</h2>
-                    <br/>
-                    <p class="text-faded">
-                        Bootstrap's responsive grid comes in 4 sizes or "breakpoints": tiny (xs), small(sm), medium(md) and large(lg). These 4 grid sizes enable you create responsive layouts that behave accordingly on different devices.
-                    </p>
-                    <a href="#three" class="btn btn-default btn-xl page-scroll">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </section>
     <section id="two">
         <div class="container">
             <div class="row">
@@ -92,7 +72,7 @@
                 <div class="col-lg-6 col-md-6 text-center">
                     <div class="feature">
                         <i class="icon-lg ion-cash wow fadeIn" data-wow-delay=".3s"></i>
-                        <a id="ask" th:href="@{/order/ask}">
+                        <a id="ask" href="#four">
                         <h3 th:text="#{order.ask}"></h3>
                         <p class="text-muted" th:text="#{order.ask.description}"></p>
                         </a>
@@ -200,11 +180,16 @@
                     <div class="media-body media-middle">
                         <p th:text="|${meal.description}|"></p>
                         <p class="ion-social-usd" th:text="|${meal.price}|"></p>
+                        <div class="media-right">
+                         <a sec:authorize="isAuthenticated()" type="button" th:href="@{/order/view_meal/}+${meal.id}" th:text="#{order.buy}" class="btn btn-default btn-xl"> <i class="ion-android-arrow-forward"></i></a>
+                         </div>
+                       <!--  <td><a sec:authorize="isAuthenticated()" th:href="@{/order/view_meal/}+${meal.id}"> <span
+							class="badge" th:text="#{crud.action.save}" /></a></td> -->
+                        <!-- <a><p th:href="@{|/order/view_meal/${meal.id}|}" th:text="Comprar!"></p></a> -->
                     </div>
                     <div class="media-right">
-                        <i class="text-primary icon-lg ion-ios-nutrition"></i>
-                    </div>
-                    <hr/>
+                        <i class="text-primary icon-lg ion-ios-nutrition"></i> 
+                    </div>                <hr/>
                 </div>
             </div>
         </div>
@@ -212,41 +197,6 @@
     <aside class="bg-dark">
         
     </aside>
-    <section id="last">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="margin-top-0 wow fadeIn" th:text="#{menu.faleconosco}"></h2>
-                    <hr class="primary"/>
-                    <p ></p>
-                </div>
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <form class="contact-form row">
-                        <div class="col-md-4">
-                            <label></label>
-                            <input type="text" class="form-control" placeholder="Name"/>
-                        </div>
-                        <div class="col-md-4">
-                            <label></label>
-                            <input type="text" class="form-control" placeholder="Email"/>
-                        </div>
-                        <div class="col-md-4">
-                            <label></label>
-                            <input type="text" class="form-control" placeholder="Phone"/>
-                        </div>
-                        <div class="col-md-12">
-                            <label></label>
-                            <textarea class="form-control" rows="9" placeholder="Your message here.."></textarea>
-                        </div>
-                        <div class="col-md-4 col-md-offset-4">
-                            <label></label>
-                            <button type="button" data-toggle="modal" data-target="#alertModal" class="btn btn-primary btn-block btn-lg">Send <i class="ion-android-arrow-forward"></i></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
     <footer id="footer">
         <div class="container-fluid">
             <div class="row">

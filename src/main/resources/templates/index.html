@@ -198,11 +198,16 @@ layout:decorator="${!auth} ? 'layouts/index':'layouts/index_auth'">
             <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
                 <h2 class="text-center text-primary">Pratos</h2>
                 <hr/>
+                <tr th:each="meal : ${meals}">
+				<td><a href="#" th:href="@{|/order/view_meal/${meal.id}|}"
+					th:text="Comprar!" /></td></tr>
                 <div class="media wow fadeInRight" th:each="meal:${meals}">
                     <h3 class="text-primary" th:text="|${meal.name}|"></h3>
                     <div class="media-body media-middle">
                         <p th:text="|${meal.description}|"></p>
                         <p class="ion-social-usd" th:text="|${meal.price}|"></p>
+                     <!--    <td><a sec:authorize="isAuthenticated()" th:href="@{/order/view_meal/}+${meal.id}"> <span
+							class="badge" th:text="#{crud.action.edit}" /></a></td> -->
                     </div>
                     <div class="media-right">
                         <i class="text-primary icon-lg ion-ios-nutrition"></i>
