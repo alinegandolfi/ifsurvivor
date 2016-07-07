@@ -44,6 +44,10 @@ public class User {
 	@Column(columnDefinition = "TEXT")
 	private String description;
 	
+	/**
+	 +	 * Relacionamento entre User(Cliente) e Pedido.
+	 +   * Data: 30/06/2016
+	 +	 */
 	@OneToMany
 	private List<Orders> orders;
 

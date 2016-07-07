@@ -23,7 +23,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#first" th:text="#{woking.title}" ><i class="ion-ios-analytics-outline"></i> </a>
+                <a class="navbar-brand page-scroll" th:text="#{woking.title}" ><i class="ion-ios-analytics-outline"></i> </a>
             </div>
             <div class="navbar-collapse collapse" id="bs-navbar">
                 <ul class="nav navbar-nav">
@@ -34,13 +34,7 @@
                         <a class="page-scroll" href="#two" th:text="#{menu.options}"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#three" th:text="#{menu.galeria}"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#four" th:text="#{menu.meals}"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#last" th:text="#{menu.faleconosco}"></a>
+                        <a class="page-scroll" href="#four" th:text="#{order.buy.confirmation}"></a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -51,19 +45,6 @@
             </div>
         </div>
     </nav>
-    <header id="first">
-        <div class="header-content">
-            <div class="inner">
-                <h1 class="cursive" th:text="#{woking.title}"></h1>
-                <h4 th:text="#{woking.description}"></h4>
-                <hr/>
-                <a href="#video-background" id="toggleVideo" data-toggle="collapse" class="btn btn-primary btn-xl">Parar o video</a> &nbsp;
-            </div>
-        </div>
-        <video autoplay="" loop="" class="fillWidth fadeIn wow collapse in" data-wow-delay="0.5s" poster="img/woking-1.jpg" id="video-background">
-            <source src="https://s3-us-west-2.amazonaws.com/coverr/mp4/Traffic-blurred2.mp4" type="video/mp4"/>Your browser does not support the video tag. I suggest you upgrade your browser.
-        </video>
-    </header>
     <!-- Lista de Meals -->
     <section class="container-fluid" id="four">
         <div class="row">
@@ -75,6 +56,7 @@
 								id="mainForm">
 								
 				<input type="hidden" th:field="${order.id}" />
+				<!--  <input type="hidden" th:field="${order.meal.id}"  />-->
                 
                 <div class="form-group media wow fadeInRight">
                     <h3 class="text-primary" th:text="|${order.meal.name}|"></h3>
@@ -87,6 +69,36 @@
                     </div>  
                     
                     <div class="col-xs-10 text-center">
+                    
+                      
+               <!--     <div class="form-group col-md-4" th:classappend="${#fields.hasErrors('meal.name')}? 'has-error'">
+                            <label for="meal.name" th:text="#{meal.name}" /><input
+										type="text" class="form-control" id="mealName"
+										th:field="*{meal.name}"
+										th:readonly="true"/> <span
+										th:if="${#fields.hasErrors('meal.name')}" th:errors="*{meal.name}"
+										th:class="help-block" />
+                    </div>
+                    
+                     <div class="form-group col-md-4" th:classappend="${#fields.hasErrors('meal.description')}? 'has-error'">
+                            <label for="meal.description" th:text="#{meal.description}" /><input
+										type="text" class="form-control" id="mealDescription"
+										th:field="*{meal.description}"
+										th:readonly="true" /> <span
+										th:if="${#fields.hasErrors('meal.description')}" th:errors="*{meal.description}"
+										th:class="help-block" />
+					 </div> 
+                        
+                     <div class="form-group col-md-4" th:classappend="${#fields.hasErrors('meal.price')}? 'has-error'">
+                            <label for="meal.price" th:text="#{meal.price}" /><input
+										type="number" class="form-control" id="mealPrice"
+										th:field="*{meal.price}"
+										th:readonly="true" /> <span
+										th:if="${#fields.hasErrors('meal.price')}" th:errors="*{meal.price}"
+										th:class="help-block" />
+                        </div> 
+                        
+                         -->
                     
                      <div class="form-group col-md-4" th:classappend="${#fields.hasErrors('quantity')}? 'has-error'">
                             <label for="orderQuantity" th:text="#{order.quantity}" /><input

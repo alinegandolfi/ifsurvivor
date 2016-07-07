@@ -12,6 +12,10 @@ import javax.validation.constraints.Future;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+/**
++	 * Entidade Pedido.
++   * Data: 30/06/2016
++	 */
 @Entity
 public class Orders {
 	

@@ -6,6 +6,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
++	 * Entidade Prato.
++   * Data: 30/06/2016
++	 */
 @Entity
 @Table(name = "meal")
 public class Meal {
