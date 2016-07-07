@@ -26,10 +26,10 @@ public class MealController {
 	}
 	
 	@Secured("ROLE_CLIENT")
-	@RequestMapping("/view_meal/{id}")
+	@RequestMapping("/view/{id}")
 	public String view(@PathVariable Long id, Model model) {
 		model.addAttribute("meal", mealService.get(id));
 		model.addAttribute("readonly", true);
-		return "student/form";
+		return "order/form";
 	}
 }

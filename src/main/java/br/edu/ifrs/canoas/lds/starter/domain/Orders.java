@@ -23,13 +23,15 @@ public class Orders {
 	
 	@Future(message = "Start date is prior to the current date")
 	@javax.persistence.Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date date;
 	
 	@ManyToOne
 	private Meal meal;
 	
 	private int quantity;
+	
+	private String obs;
 	
 	@ManyToOne
 	private User client;
@@ -76,13 +78,22 @@ public class Orders {
 		this.client = client;
 	}
 
-	public double getQuantity() {
+	public int getQuantity() {
 		return quantity;
 	}
 
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
+
+	public String getObs() {
+		return obs;
+	}
+
+	public void setObs(String obs) {
+		this.obs = obs;
+	}
+	
 	
 	
 	
